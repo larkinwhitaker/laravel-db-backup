@@ -1,0 +1,21 @@
+{
+    "name": "witty/laravel-db-backup",
+    "description": "Easy commands to backup and restore databases for Laravel 5 applications",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Larkin Whitaker",
+            "email": "larkinwhitaker@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.0.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Witty\\LaravelDbBackup": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
