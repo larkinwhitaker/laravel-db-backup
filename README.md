@@ -1,6 +1,6 @@
 # laravel-db-backup
 
-Based off of https://github.com/schickling/laravel-backup with support for Laravel 5.
+Based off of https://github.com/schickling/laravel-backup with support for Laravel 5 and 5.1.
 
 Installation
 ----
