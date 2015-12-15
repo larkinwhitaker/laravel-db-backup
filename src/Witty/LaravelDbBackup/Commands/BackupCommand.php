@@ -1,14 +1,17 @@
-<?php namespace Witty\LaravelDbBackup\Commands;
+<?php 
 
+namespace Witty\LaravelDbBackup\Commands;
+
+use Aws\Laravel\AwsFacade as AWS;
+use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\File;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
-use AWS, Config, File;
-
 use Witty\LaravelDbBackup\Commands\Helpers\BackupFile;
 use Witty\LaravelDbBackup\Commands\Helpers\BackupHandler;
 
-class BackupCommand extends BaseCommand {
-
+class BackupCommand extends BaseCommand 
+{
 	/**
 	 * @var string
 	 */

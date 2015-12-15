@@ -1,11 +1,14 @@
-<?php namespace Witty\LaravelDbBackup\Commands;
+<?php 
 
+namespace Witty\LaravelDbBackup\Commands;
+
+use Illuminate\Support\Facades\File;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Finder\Finder;
-use File;
 
-class RestoreCommand extends BaseCommand {
+class RestoreCommand extends BaseCommand 
+{
 
 	/**
 	 * @var string

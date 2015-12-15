@@ -1,14 +1,15 @@
-<?php namespace Witty\LaravelDbBackup\Commands;
+<?php 
+
+namespace Witty\LaravelDbBackup\Commands;
 
 use Illuminate\Console\Command;
-use Config;
-
+use Illuminate\Support\Facades\Config;
 use Witty\LaravelDbBackup\DatabaseBuilder;
 use Witty\LaravelDbBackup\ConsoleColors;
 use Witty\LaravelDbBackup\Console;
 
-class BaseCommand extends Command {
-	
+class BaseCommand extends Command 
+{
 	/**
 	 * @var Witty\LaravelDbBackup\DatabaseBuilder
 	 */
