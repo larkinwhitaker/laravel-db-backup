@@ -1,4 +1,6 @@
-<?php namespace Witty\LaravelDbBackup;
+<?php 
+
+namespace Witty\LaravelDbBackup;
 
 class ConsoleColors 
 {

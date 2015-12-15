@@ -1,10 +1,12 @@
-<?php namespace Witty\LaravelDbBackup\Databases;
+<?php 
+
+namespace Witty\LaravelDbBackup\Databases;
 
 use Witty\LaravelDbBackup\Databases\DatabaseContract;
 use Witty\LaravelDbBackup\Console;
 
-class SqliteDatabase implements DatabaseContract {
-	
+class SqliteDatabase implements DatabaseContract 
+{	
 	/**
 	 * @var Witty\LaravelDbBackup\Console
 	 */

@@ -1,7 +1,8 @@
-<?php namespace Witty\LaravelDbBackup;
+<?php 
+
+namespace Witty\LaravelDbBackup;
 
 use Witty\LaravelDbBackup\Console;
-
 use Witty\LaravelDbBackup\Databases\MySQLDatabase;
 use Witty\LaravelDbBackup\Databases\SqliteDatabase;
 use Witty\LaravelDbBackup\Databases\PostgresDatabase;

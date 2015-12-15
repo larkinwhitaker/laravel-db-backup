@@ -1,10 +1,12 @@
-<?php namespace Witty\LaravelDbBackup;
+<?php 
+
+namespace Witty\LaravelDbBackup;
 
 use Witty\LaravelDbBackup\DatabaseBuilder;
 use Illuminate\Support\ServiceProvider;
 
-class DBBackupServiceProvider extends ServiceProvider {
-
+class DBBackupServiceProvider extends ServiceProvider 
+{
 	/**
 	 * Indicates if loading of the provider is deferred.
 	 *

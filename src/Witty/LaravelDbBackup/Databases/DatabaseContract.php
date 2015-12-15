@@ -1,6 +1,9 @@
-<?php namespace Witty\LaravelDbBackup\Databases;
+<?php 
 
-interface DatabaseContract {
+namespace Witty\LaravelDbBackup\Databases;
+
+interface DatabaseContract 
+{
 	/**
 	 * Create a database dump
 	 * 

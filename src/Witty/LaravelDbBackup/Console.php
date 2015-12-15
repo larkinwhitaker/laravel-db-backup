@@ -1,4 +1,6 @@
-<?php namespace Witty\LaravelDbBackup;
+<?php 
+
+namespace Witty\LaravelDbBackup;
 
 use Symfony\Component\Process\Process;
 
@@ -14,9 +16,7 @@ class Console
 		{
 			return true;
 		}
-		else
-		{
-			return $process->getErrorOutput();
-		}
+		
+		return $process->getErrorOutput();
 	}
 }

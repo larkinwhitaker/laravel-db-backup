@@ -1,11 +1,13 @@
-<?php namespace Witty\LaravelDbBackup\Databases;
+<?php 
 
+namespace Witty\LaravelDbBackup\Databases;
+
+use Illuminate\Support\Facades\Config;
 use Witty\LaravelDbBackup\Databases\DatabaseContract;
 use Witty\LaravelDbBackup\Console;
-use Config;
 
-class MySQLDatabase implements DatabaseContract {
-	
+class MySQLDatabase implements DatabaseContract 
+{	
 	/**
 	 * @var Witty\LaravelDbBackup\Console
 	 */
