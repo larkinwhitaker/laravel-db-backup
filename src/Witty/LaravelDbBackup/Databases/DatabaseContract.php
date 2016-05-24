@@ -9,7 +9,7 @@ interface DatabaseContract
 	 * 
 	 * @return boolean
 	 */
-	public function dump($destinationFile, $dumpOptions);
+	public function dump($destinationFile, array $dumpOptions=[]);
 
 	/**
 	 * Restore a database dump
