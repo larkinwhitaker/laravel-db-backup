@@ -41,12 +41,14 @@ class PostgresDatabase implements DatabaseContract
 	 * Create a database dump
 	 * 
 	 * @param string $destinationFile
+	 * @param array $dumpOptions
 	 * @return boolean
 	 */
-	public function dump($destinationFile)
+	public function dump($destinationFile, array $dumpOptions=[])
 	{
-		$command = sprintf('PGPASSWORD=%s pg_dump -Fc --no-acl --no-owner -h %s -U %s %s > %s',
+		$command = sprintf('PGPASSWORD=%s pg_dump -Fc --no-acl --no-owner %s -h %s -U %s %s > %s',
 			escapeshellarg($this->password),
+			array_key_exists('extended-insert', $dumpOptions) && filter_var($dumpOptions['extended-insert'], FILTER_VALIDATE_BOOLEAN) ? '--column-inserts' : '',
 			escapeshellarg($this->host),
 			escapeshellarg($this->user),
 			escapeshellarg($this->database),

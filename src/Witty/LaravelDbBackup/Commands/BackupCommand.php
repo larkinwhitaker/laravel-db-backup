@@ -34,7 +34,9 @@ class BackupCommand extends BaseCommand
 		$this->filePath = $dbfile->path();
 		$this->fileName = $dbfile->name();
 
-		$status = $database->dump($this->filePath);
+		$status = $database->dump($this->filePath, [
+			'extended-insert' => !is_null($this->input->getOption('extended-insert'))
+		]);
 		$handler = new BackupHandler( $this->colors );
 
 		// Error
@@ -102,7 +104,8 @@ class BackupCommand extends BaseCommand
 		return [
 			['database', null, InputOption::VALUE_OPTIONAL, 'The database connection to backup'],
 			['upload-s3', 'u', InputOption::VALUE_REQUIRED, 'Upload the dump to your S3 bucket'],
-			['keep-only-s3', true, InputOption::VALUE_NONE, 'Delete the local dump after upload to S3 bucket']
+			['keep-only-s3', true, InputOption::VALUE_NONE, 'Delete the local dump after upload to S3 bucket'],
+			['extended-insert', null, InputOption::VALUE_OPTIONAL, 'Dump data as INSERT command with explicit column names (slow but optimal for database VCS)']
 		];
 	}
 

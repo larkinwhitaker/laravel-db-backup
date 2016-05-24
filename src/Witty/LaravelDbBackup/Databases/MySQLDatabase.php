@@ -45,15 +45,17 @@ class MySQLDatabase implements DatabaseContract
 	 * Create a database dump
 	 * 
 	 * @param string $destinationFile
+	 * @param array $dumpOptions
 	 * @return boolean
 	 */
-	public function dump($destinationFile)
+	public function dump($destinationFile, array $dumpOptions=[])
 	{
-		$command = sprintf('%smysqldump --user=%s --password=%s --host=%s --port=%s %s > %s',
+		$command = sprintf('%smysqldump --user=%s --password=%s --host=%s %s --port=%s %s > %s',
 			$this->getDumpCommandPath(),
 			escapeshellarg($this->user),
 			escapeshellarg($this->password),
 			escapeshellarg($this->host),
+			array_key_exists('extended-insert', $dumpOptions) && filter_var($dumpOptions['extended-insert'], FILTER_VALIDATE_BOOLEAN) ? '--skip-extended-insert' : '',
 			escapeshellarg($this->port),
 			escapeshellarg($this->database),
 			escapeshellarg($destinationFile)
