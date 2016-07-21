@@ -125,7 +125,7 @@ class BackupCommand extends BaseCommand
 	protected function uploadS3()
 	{
 		$bucket = $this->option('upload-s3');
-		$s3 = AWS::get('s3');
+		$s3 = AWS::createClient('s3');
 		$s3->putObject([
 			'Bucket'     => $bucket,
 			'Key'        => $this->getS3DumpsPath() . '/' . $this->fileName,
