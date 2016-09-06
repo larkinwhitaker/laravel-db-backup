@@ -32,9 +32,10 @@ class SqliteDatabase implements DatabaseContract
 	 * Create a database dump
 	 * 
 	 * @param string $destinationFile
+	 * @param array $dumpOptions
 	 * @return boolean
 	 */
-	public function dump($destinationFile)
+	public function dump($destinationFile, array $dumpOptions=[])
 	{
 		$command = sprintf('cp %s %s',
 			escapeshellarg($this->databaseFile),
